@@ -22,6 +22,8 @@ Resources:
           Type: Schedule
           Properties:
             Schedule: rate(3 minutes)
+          Metadata:
+            StackeryName: Every 3 minutes
     Metadata:
       StackeryName: myCronJob
 Parameters:
