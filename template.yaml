@@ -2,16 +2,16 @@ AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: Stackery Serverless Cron Example Stack
 Resources:
-  functionAAE762EE:
+  cronFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub ${AWS::StackName}-functionAAE762EE
+      FunctionName: !Sub ${AWS::StackName}-cronFunction
       Description: !Sub
         - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
         - ResourceName: myCronJob
-      CodeUri: src/functionAAE762EE
+      CodeUri: src/cronFunction
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       MemorySize: 3008
       Timeout: 30
       Tracing: Active
